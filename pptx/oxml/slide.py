@@ -87,6 +87,7 @@ class CT_Slide(_BaseSlideElement):
     )
     cSld = OneAndOnlyOne('p:cSld')
     clrMapOvr = ZeroOrOne('p:clrMapOvr', successors=_tag_seq[2:])
+    timing = ZeroOrOne('p:timing', successors=_tag_seq[4:])
     del _tag_seq
 
     @classmethod

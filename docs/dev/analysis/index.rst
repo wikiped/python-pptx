@@ -69,6 +69,7 @@ Shape
 .. toctree::
    :titlesonly:
 
+   sld-insert-media
    shp-shapes
    sld-slide-shapes
    shp-autoshape

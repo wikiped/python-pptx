@@ -19,6 +19,7 @@ from pptx.opc.package import PartFactory
 from pptx.parts.chart import ChartPart
 from pptx.parts.coreprops import CorePropertiesPart
 from pptx.parts.image import ImagePart
+from pptx.parts.media import MediaPart
 from pptx.parts.presentation import PresentationPart
 from pptx.parts.slide import (
     NotesMasterPart, NotesSlidePart, SlideLayoutPart, SlideMasterPart,
@@ -43,6 +44,7 @@ content_type_to_part_class_map = {
     CT.MS_PHOTO:              ImagePart,
     CT.PNG:                   ImagePart,
     CT.TIFF:                  ImagePart,
+    CT.VIDEO:                 MediaPart,
     CT.X_EMF:                 ImagePart,
     CT.X_WMF:                 ImagePart,
 }
@@ -50,6 +52,6 @@ content_type_to_part_class_map = {
 PartFactory.part_type_for.update(content_type_to_part_class_map)
 
 del (
-    ChartPart, CorePropertiesPart, ImagePart, SlidePart, SlideLayoutPart,
-    SlideMasterPart, PresentationPart, CT, PartFactory
+    ChartPart, CorePropertiesPart, ImagePart, MediaPart, SlidePart,
+    SlideLayoutPart, SlideMasterPart, PresentationPart, CT, PartFactory
 )

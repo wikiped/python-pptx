@@ -91,4 +91,6 @@ class Picture(BaseShape):
         Unique integer identifying the type of this shape, unconditionally
         ``MSO_SHAPE_TYPE.PICTURE`` in this case.
         """
+        if self._pic.xpath('.//a:videoFile'):
+            return MSO_SHAPE_TYPE.MEDIA
         return MSO_SHAPE_TYPE.PICTURE
