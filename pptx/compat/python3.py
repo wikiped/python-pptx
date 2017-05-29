@@ -40,5 +40,3 @@ def to_unicode(text):
 
 
 Unicode = str
-
-is_identifier = str.isidentifier

@@ -332,7 +332,6 @@ class SlideLayouts(ParentedElementProxy):
     def __init__(self, sldLayoutIdLst, parent):
         super(SlideLayouts, self).__init__(sldLayoutIdLst, parent)
         self._sldLayoutIdLst = sldLayoutIdLst
-        self._init_props()
 
     def __getitem__(self, item):
         """
@@ -377,18 +376,6 @@ class SlideLayouts(ParentedElementProxy):
                 layout = self.part.related_slide_layout(sldLayoutId.rId)
                 names[layout.name] = i
         return names
-
-    def _init_props(self):
-        """
-        Adds available layout names as propeties to `slide_layouts`.
-        Layouts can then be accessed like `slide_layouts.Blank`
-        """
-        from .util import name_to_attr
-        for layout_name in self.names:
-            attr_name = name_to_attr(layout_name, self)
-            if attr_name:
-                setattr(type(self), attr_name,
-                    property(lambda self, name=layout_name: self[name]))
 
 
 class SlideMaster(_BaseMaster):
