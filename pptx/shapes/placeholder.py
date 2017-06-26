@@ -331,11 +331,10 @@ class PicturePlaceholder(_BaseSlidePlaceholder):
         having an `a:xfrm` element, allowing its extents to be inherited from
         its layout placeholder.
         """
-
         rId, desc, image_size = self._get_or_add_image(image_file)
-        id_, name = self.id, self.name
+        shape_id, name = self.shape_id, self.name
 
-        pic = CT_Picture.new_ph_pic(id_, name, desc, rId)
+        pic = CT_Picture.new_ph_pic(shape_id, name, desc, rId)
 
         if crop:
             pic.crop_to_fit(image_size, (self.width, self.height))
